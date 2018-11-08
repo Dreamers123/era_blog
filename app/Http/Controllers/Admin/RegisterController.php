@@ -22,11 +22,7 @@ class RegisterController extends Controller
 
     use RegistersUsers;
 
-    /**
-     * Where to redirect users after registration.
-     *
-     * @var string
-     */
+
     protected $redirectTo = 'admin/home';
 
     /**
@@ -65,7 +61,6 @@ class RegisterController extends Controller
     {
         return User::create([
             'name' => $data['name'],
-            'lastname' => $data['lastname'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
